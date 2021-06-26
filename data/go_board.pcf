@@ -3,6 +3,3 @@ set_io i_clk 15
 
 # Onboard LED 1
 set_io q 56
-
-# Onboard Switch 1
-set_io i_rst 53
