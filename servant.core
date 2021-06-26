@@ -399,7 +399,7 @@ targets:
   go_board:
     default_tool : icestorm
     filesets : [mem_files, soc, service_no_pll, go_board]
-    parameters : [memfile=blinky.hex, memsize=7168]
+    parameters : [memfile=blinky.hex, memsize=512]
     tools:
       icestorm:
         nextpnr_options : [--hx1k, --package, vq100, --freq, 20]
