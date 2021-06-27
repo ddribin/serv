@@ -9,7 +9,7 @@ filesets:
     depend : ["fusesoc:utils:generators"]
 
   service_no_pll:
-    files: [servant/service_no_pll.v]
+    files: [servant/service.v]
     file_type : verilogSource
 
   mem_files:

@@ -16,11 +16,11 @@ module servant_clock_gen
       end else begin
 	 assign o_clk = i_clk;
 
-	 reg [4:0] rst_reg = 5'b11111;
+	 reg [6:0] rst_reg;
 
 	 always @(posedge o_clk)
-	   rst_reg <= {1'b0, rst_reg[4:1]};
-	 assign o_rst = rst_reg[0];
+     if (rst_reg[6] == 0) rst_reg = rst_reg + 1;
+	 assign o_rst = !rst_reg[6];
       end
    endgenerate
 endmodule
