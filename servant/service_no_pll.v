@@ -6,15 +6,12 @@ module service
    parameter memfile = "zephyr_hello.hex";
    parameter memsize = 8192;
 
-   reg [20:0]     rst_count;
-   reg            rst_r;
+   reg [6:0]      rst_count;
+   wire           rst_r = !rst_count[6];
 
   always @(posedge i_clk) begin
-    if (rst_count < 21'd2_000_000) begin
-      rst_r <= 1;
-      rst_count <= rst_count + 21'd1;
-    end else begin
-      rst_r <= 0;
+    if (rst_r == 1) begin
+      rst_count <= rst_count + 1;
     end
    end
 
