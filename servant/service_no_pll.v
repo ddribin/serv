@@ -9,7 +9,7 @@ module service
    reg [6:0]      rst_count;
    wire           rst_r = !rst_count[6];
 
-  always @(posedge i_clk) begin
+   always @(posedge i_clk) begin
     if (rst_r == 1) begin
       rst_count <= rst_count + 1;
     end
